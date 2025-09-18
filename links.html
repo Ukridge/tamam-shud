@@ -1,27 +1,77 @@
-<HTML>
-<HEAD>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Wikipedia ссылки</title>
   <style>
+    /* Базовые стили для мобильных */
+    :root {
+      --content-max: 48rem;      
+      --gap: 12px;               
+      --tap-pad-y: 6px;          
+      --tap-pad-x: 4px;
+    }
+
     body {
       font-family: Verdana, Tahoma, Arial, sans-serif;
-      font-size: 14px;
+      font-size: 16px;            
       line-height: 1.6;
-      padding: 20px;
-      max-width: 800px;
-      margin: auto;
+      margin: 0;
+      padding: 16px;
+      background: #fff;
+      color: #111;
     }
+
+    main {
+      max-width: var(--content-max);
+      margin: 0 auto;
+    }
+
     h1 {
       font-size: 20px;
-      margin-bottom: 20px;
+      margin: 0 0 12px;
     }
+
+    p.lead {
+      margin: 0 0 16px;
+      color: #444;
+    }
+
     ol {
-      padding-left: 20px;
+      margin: 0;
+      padding-left: 1.25rem;
     }
+
     li {
-      margin-bottom: 8px;
+      margin-bottom: var(--gap); 
+      word-break: break-word;    
+      overflow-wrap: anywhere;   
+    }
+
+    a {
+      display: inline-block;     
+      padding: var(--tap-pad-y) var(--tap-pad-x);
+      text-decoration: none;
+      -webkit-tap-highlight-color: rgba(0,0,0,0.08);
+    }
+    a:focus,
+    a:hover {
+      text-decoration: underline;
+      outline: none;
+    }
+
+    @media (min-width: 768px) {
+      body { font-size: 14px; }
+      li   { margin-bottom: 8px; }
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body { background: #0b0b0b; color: #eaeaea; }
+      a { color: #9bb8ff; }
     }
   </style>
-</HEAD>
+</head>
 <BODY>
 <h1>Тамам Шуд</h1>
 <P>Список необычных и просто интересных статей из Википедии. Лепра <a target="_blank" href="https://idiod.leprosorium.ru/comments/2106762/">та</a>!</P>
