@@ -5,17 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Wikipedia ссылки</title>
   <style>
-    /* Базовые стили для мобильных */
     :root {
-      --content-max: 48rem;      
-      --gap: 12px;               
-      --tap-pad-y: 6px;          
+      --content-max: 48rem;       /* ~768px */
+      --gap: 12px;                /* расстояние между пунктами */
+      --tap-pad-y: 6px;
       --tap-pad-x: 4px;
+
+      /* Цвета ссылок */
+      --link-color: #1a73e8;      /* мягкий синий (Google blue) */
+      --visited-color: #7b1fa2;   /* благородный фиолетовый */
+      --hover-color: #0c47a1;     /* тёмно-синий при наведении */
     }
 
     body {
       font-family: Verdana, Tahoma, Arial, sans-serif;
-      font-size: 16px;            
+      font-size: 16px;
       line-height: 1.6;
       margin: 0;
       padding: 16px;
@@ -44,19 +48,30 @@
     }
 
     li {
-      margin-bottom: var(--gap); 
-      word-break: break-word;    
-      overflow-wrap: anywhere;   
+      margin-bottom: var(--gap);
+      word-break: break-word;
+      overflow-wrap: anywhere;
     }
 
     a {
-      display: inline-block;     
+      display: inline-block;
       padding: var(--tap-pad-y) var(--tap-pad-x);
       text-decoration: none;
       -webkit-tap-highlight-color: rgba(0,0,0,0.08);
+      transition: color 0.2s ease;
     }
-    a:focus,
-    a:hover {
+
+    a:link {
+      color: var(--link-color);
+    }
+
+    a:visited {
+      color: var(--visited-color);
+    }
+
+    a:hover,
+    a:focus {
+      color: var(--hover-color);
       text-decoration: underline;
       outline: none;
     }
@@ -68,7 +83,9 @@
 
     @media (prefers-color-scheme: dark) {
       body { background: #0b0b0b; color: #eaeaea; }
-      a { color: #9bb8ff; }
+      a:link { color: #82b1ff; }
+      a:visited { color: #ba68c8; }
+      a:hover, a:focus { color: #448aff; }
     }
   </style>
 </head>
